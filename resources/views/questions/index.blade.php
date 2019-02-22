@@ -11,9 +11,20 @@
                     @if($questions)
                     
                         @foreach ($questions as $question)
-                            <div class="media">
-                                <div class="media-body">
-                                    <h3 class="mt-0">
+                            <div class="media row">
+                                <div class="col-sm-1 counters">
+                                    <div class="vote">
+                                        <strong>{{ $question->votes }}</strong> {{ str_plural('vote', $question->votes)}}
+                                    </div>
+                                    <div class="status {{ $question->status }}">
+                                        <strong>{{ $question->answers }}</strong> {{ str_plural('answer', $question->answers)}}
+                                    </div>
+                                    <div class="view">
+                                        {{ $question->views ." ". str_plural('view', $question->views)}}
+                                    </div>
+                                </div>
+                                <div class="medias-body col-sm-11">
+                                    <h3 class="mt-0" style="margin-top:0;">
                                         <a href="{{ $question->url }}">{{$question->title}}</a>
                                     </h3>
 
