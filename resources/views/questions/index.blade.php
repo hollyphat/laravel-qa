@@ -14,6 +14,9 @@
                 </div>
 
                 <div class="panel-body">
+
+                    @include('layouts._messages')
+
                     @if($questions)
                     
                         @foreach ($questions as $question)
